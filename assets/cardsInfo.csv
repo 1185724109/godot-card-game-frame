@@ -1,0 +1,17 @@
+﻿base_cardName,index,base_displayName,base_cardClass,base_description,base_price,base_cardWeight,base_maxStack,site_area,npc_schedule,food_HP
+Ice,1,冰,item,不仅能降温，还能当成临时冰淇淋。,2,1,1000,0,0,0
+Stone,2,石头,item,看似平凡，却是太空飞船的基础材料。,1,1,1000,0,0,0
+Iron_ore,3,铁矿,ore,虽然看起来很普通，但经过加工后，它可是战斗中的坚固护甲。,10,1,1000,0,0,0
+Silicon_ore,4,硅矿,ore,高科技设备的幕后英雄。,5,1,1000,0,0,0
+Magnesium_ore,5,镁矿,ore,闪亮登场，自带烟花特效。,5,1,1000,0,0,0
+Nickel_ore,6,镍矿,ore,让你的装备变得更加坚韧。,8,1,1000,0,0,0
+Cobalt_ore,7,钴矿,ore,电子设备性能的秘密武器。,8,1,1000,0,0,0
+Silver_ore,8,银矿,ore,不仅能买东西，还很奢华。,10,1,1000,0,0,0
+Gold_ore,9,金矿,ore,财富和权力的象征，亮瞎眼。,50,1,1000,0,0,0
+Platinum_ore,10,铂矿,ore,贵金属中的绅士，低调奢华。,20,1,1000,0,0,0
+Uranium_ore,11,铀矿,ore,能量满满，小心别惹火它。,50,1,1000,0,0,0
+Iron,12,铁,item,基础材料之王，不怕生锈。,50,1,1000,0,0,0
+Silicon,13,硅,item,构建高科技设备的核心元素。,50,1,1000,0,0,0
+Magnesium,14,镁,item,轻盈又强壮，是船体材料的首选。,50,1,1000,0,0,0
+Nickel,15,镍,item,装备更加坚固耐用的秘密武器。,80,1,1000,0,0,0
+Cobalt,16,钴,item,电子设备性能提升的小帮手。,80,1,1000,0,0,0

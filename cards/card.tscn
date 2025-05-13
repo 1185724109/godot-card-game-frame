@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmjqf30wl6ddi"]
+
+[ext_resource type="Texture2D" uid="uid://boada8x2kxwkg" path="res://icon.svg" id="1_ivai2"]
+[ext_resource type="Script" uid="uid://cthb4d6c2kkxh" path="res://cards/card.gd" id="1_nwofj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwofj"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivai2"]
+draw_center = false
+
+[sub_resource type="Theme" id="Theme_4k7q8"]
+Button/styles/hover = SubResource("StyleBoxFlat_nwofj")
+Button/styles/normal = SubResource("StyleBoxFlat_ivai2")
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(240, 340)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nwofj")
+
+[node name="Control" type="Panel" parent="."]
+custom_minimum_size = Vector2(220, 317)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -158.5
+offset_right = 110.0
+offset_bottom = 158.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="itemImg" type="TextureRect" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 68.5
+offset_right = 169.0
+offset_bottom = 196.5
+texture = ExtResource("1_ivai2")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="name" type="Label" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 203.5
+offset_right = 171.0
+offset_bottom = 237.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Your Cards"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = -10.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4k7q8")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

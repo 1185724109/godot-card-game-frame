@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://5wgb3g0q8r2h"]
+
+[node name="cardBackground" type="Control"]
+custom_minimum_size = Vector2(240, 340)
+layout_mode = 3
+anchors_preset = 0

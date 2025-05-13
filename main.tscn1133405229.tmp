@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cper56cxk0sl1"]
+
+[ext_resource type="PackedScene" uid="uid://bmjqf30wl6ddi" path="res://cards/card.tscn" id="1_ig7tw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control2" parent="." instance=ExtResource("1_ig7tw")]
