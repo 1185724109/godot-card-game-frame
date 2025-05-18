@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 CardInfos="*res://assets/cardsInfo.gd"
+VfSlayer="*res://VFSlayer.tscn"
+Infos="*res://infos.gd"
 
 [display]
 
@@ -27,3 +29,4 @@ window/size/viewport_height=1080
 [global_group]
 
 cardDropable=""
+cardDeck=""

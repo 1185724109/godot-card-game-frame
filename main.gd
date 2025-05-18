@@ -10,21 +10,9 @@ extends Node2D
 @export var minRandomItemNum:int
 @export var siteItems:Dictionary
 
-func add_new_card(cardName,cardDeck,caller=scene_1)->Node:
-		print("开始创建新卡牌："+str(cardName))
-		var cardClass=CardInfos.infosDic[cardName]["base_cardClass"]
-		print("添加的卡的类型为%s:"%cardClass)
-		var cardToAdd
+
 		
-		cardToAdd=preload("res://cards/card.tscn").instantiate() as card
 		
-		cardToAdd.initCard(cardName)
-		
-		cardToAdd.global_position=caller.global_position
-		cardToAdd.z_index=100
-		cardDeck.add_card(cardToAdd)
-		
-		return cardToAdd
 #写一个随机生成几张卡片的函数，首先从给定的随机最大值和最小值之间生成卡牌数量，然后根据卡牌数量从可选择的卡牌中根据卡牌出现概率选择生成的卡牌并执行生成函数，可选择的卡牌以字典的形式储存，键名为卡牌名，键值为出现概率，概率为0到100
 func get_some_card():
 	
@@ -42,8 +30,9 @@ func get_some_card():
 				break
 
 	for c in selected_cards:
+		var randomDeck = get_tree().get_nodes_in_group("cardDeck")[randi_range(0,2)]
 		await get_tree().create_timer(0.1).timeout
-		add_new_card(c,scene_3,scene_1)
+		Infos.add_new_card(c,randomDeck,$Button)
 	
 	
 # 计算权重总和

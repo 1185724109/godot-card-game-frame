@@ -30,13 +30,13 @@ follow_target = NodePath("../Control")
 offset_left = 355.0
 offset_right = 1920.0
 
-[node name="deck2" parent="." instance=ExtResource("2_0xm2m")]
+[node name="deck2" parent="." groups=["cardDropable"] instance=ExtResource("2_0xm2m")]
 offset_left = 355.0
 offset_top = 360.0
 offset_right = 1920.0
 offset_bottom = 720.0
 
-[node name="deck3" parent="." instance=ExtResource("2_0xm2m")]
+[node name="deck3" parent="." groups=["cardDropable"] instance=ExtResource("2_0xm2m")]
 offset_left = 355.0
 offset_top = 720.0
 offset_right = 1920.0

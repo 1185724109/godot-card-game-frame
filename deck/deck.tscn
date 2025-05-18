@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvqnbkjk3e8cp" path="res://deck/deck.gd" id="1_iau1w"]
 
-[node name="deck" type="Panel" groups=["cardDropable"]]
+[node name="deck" type="Panel" groups=["cardDeck"]]
 offset_right = 1565.0
 offset_bottom = 360.0
 script = ExtResource("1_iau1w")
@@ -25,3 +25,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = -36.0
+offset_right = -3.0
+offset_bottom = 359.0
+value = 17.05
+fill_mode = 3
+
+[node name="weight" type="Label" parent="."]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 4.0
+offset_right = -56.0
+offset_bottom = 27.0
+text = "0/100"

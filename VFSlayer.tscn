@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dew3yjp7bqrc6"]
+
+[ext_resource type="Script" uid="uid://c60opswrxm3t8" path="res://VFSlayer.gd" id="1_tke60"]
+
+[node name="VFSlayer" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_tke60")

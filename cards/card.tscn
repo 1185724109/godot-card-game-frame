@@ -29,46 +29,54 @@ script = ExtResource("1_nwofj")
 [node name="Control" type="Panel" parent="."]
 custom_minimum_size = Vector2(220, 317)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -110.0
-offset_top = -158.5
-offset_right = 110.0
-offset_bottom = 158.5
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 11.5
+offset_right = -10.0
+offset_bottom = -11.5
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="itemImg" type="TextureRect" parent="Control/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 8.0
-offset_right = -6.0
-offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="itemImg" type="TextureRect" parent="Control/ColorRect"]
-layout_mode = 0
-offset_left = 41.0
-offset_top = 68.5
-offset_right = 169.0
-offset_bottom = 196.5
 texture = ExtResource("1_ivai2")
 expand_mode = 1
 stretch_mode = 3
 
 [node name="name" type="Label" parent="Control/ColorRect"]
-layout_mode = 0
-offset_left = 45.0
-offset_top = 203.5
-offset_right = 171.0
-offset_bottom = 237.5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.035
+anchor_top = 0.5
+anchor_right = 1.027
+anchor_bottom = 0.5
+offset_left = 48.28
+offset_top = 75.0
+offset_right = -46.616
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Your Cards"
@@ -87,5 +95,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_4k7q8")
 
+[node name="allButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 25.0
+offset_right = 93.0
+offset_bottom = 56.0
+text = "x1"
+alignment = 0
+
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_down" from="allButton" to="." method="_on_all_button_button_down"]
