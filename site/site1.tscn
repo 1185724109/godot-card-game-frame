@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://cper56cxk0sl1"]
+
+[ext_resource type="Script" uid="uid://ds3gq65i0j2y3" path="res://site/main.gd" id="1_6j1h7"]
+[ext_resource type="PackedScene" uid="uid://cu546fiupegt0" path="res://deck/deck.tscn" id="2_2vui8"]
+[ext_resource type="Script" uid="uid://d16ghrtodt5g4" path="res://site/go_to_button.gd" id="3_2vui8"]
+
+[node name="site1" type="Node2D" node_paths=PackedStringArray("scene_1", "scene_2")]
+script = ExtResource("1_6j1h7")
+scene_1 = NodePath("deck")
+scene_2 = NodePath("deck2")
+maxRandomItemNum = 1
+minRandomItemNum = 4
+siteItems = {
+"Gold_ore": 100,
+"Ice": 100,
+"Silicon_ore": 100
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="deck" parent="." instance=ExtResource("2_2vui8")]
+offset_left = 355.0
+offset_right = 1920.0
+
+[node name="deck2" parent="." groups=["saveableDecks"] instance=ExtResource("2_2vui8")]
+offset_left = 355.0
+offset_top = 360.0
+offset_right = 1920.0
+offset_bottom = 720.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 80.0
+offset_top = 519.0
+offset_right = 248.0
+offset_bottom = 671.0
+text = "抽卡"
+
+[node name="goToButton" type="Button" parent="."]
+offset_left = 80.0
+offset_top = 384.0
+offset_right = 234.0
+offset_bottom = 492.0
+text = "前往site2"
+script = ExtResource("3_2vui8")
+site = "res://site/site2.tscn"
+
+[node name="Label" type="Label" parent="goToButton"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -30.0
+offset_right = 161.0
+offset_bottom = -7.0
+text = "site1"
+
+[connection signal="button_down" from="Button" to="." method="get_some_card"]
+[connection signal="button_down" from="goToButton" to="goToButton" method="_on_button_down"]

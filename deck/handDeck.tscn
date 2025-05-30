@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu546fiupegt0"]
+[gd_scene load_steps=2 format=3 uid="uid://5aq8sw700syb"]
 
-[ext_resource type="Script" uid="uid://bvqnbkjk3e8cp" path="res://deck/deck.gd" id="1_iau1w"]
+[ext_resource type="Script" uid="uid://bbj5dijtm7hgy" path="res://deck/hand_deck.gd" id="1_qpce8"]
 
-[node name="deck" type="Panel" groups=["cardDeck", "cardDropable"]]
+[node name="handDeck" type="Panel" groups=["cardDeck", "cardDropable"]]
 offset_right = 1565.0
 offset_bottom = 360.0
-script = ExtResource("1_iau1w")
+script = ExtResource("1_qpce8")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1

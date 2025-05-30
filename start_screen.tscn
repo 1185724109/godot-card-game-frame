@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdjg8k4k7nxgu"]
+
+[ext_resource type="Script" uid="uid://biv74ec3juxws" path="res://start_screen.gd" id="1_ncxyx"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ncxyx")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 823.0
+offset_top = 452.0
+offset_right = 1120.0
+offset_bottom = 543.0
+theme_override_font_sizes/font_size = 30
+text = "新游戏"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 825.0
+offset_top = 577.0
+offset_right = 1121.0
+offset_bottom = 668.0
+theme_override_font_sizes/font_size = 30
+text = "继续游戏"
+
+[connection signal="button_down" from="Button" to="." method="_on_new_game_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_continue_game_button_down"]

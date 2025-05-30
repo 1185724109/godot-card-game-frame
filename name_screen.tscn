@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dydctagvhnb67"]
+
+[ext_resource type="Script" uid="uid://hnxuaa1ayw48" path="res://name_screen.gd" id="1_tjey6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjey6")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 567.0
+offset_top = 387.0
+offset_right = 1351.0
+offset_bottom = 429.0
+theme_override_font_sizes/font_size = 24
+text = "阿尔的秘宝"
+placeholder_text = "请输入名字。。。"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 481.0
+offset_right = 1091.0
+offset_bottom = 563.0
+theme_override_font_sizes/font_size = 30
+text = "确定"
+
+[connection signal="button_down" from="Button" to="." method="_on_new_game_button_down"]

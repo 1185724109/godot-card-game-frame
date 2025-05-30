@@ -7,6 +7,18 @@ class_name deck
 
 var currentWeight = 0
 @export var maxWeight = 100
+
+
+
+func _ready() -> void:
+	if is_in_group("saveableDecks"):
+		loadCards()
+	else:
+		for i in defultCards:
+			Infos.nowScene.add_new_card(i,self)
+	$ProgressBar.max_value = maxWeight
+
+
 func _process(delta: float) -> void:
 	if cardDeck.get_child_count()!=0:
 		var children = cardDeck.get_children()
@@ -87,7 +99,44 @@ func fake_card_move(cardTofake):
 	var tween=create_tween()
 	await  tween.tween_property(fakeCard,"global_position",cardTofake.global_position,0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT).finished
 	fakeCard.queue_free()
+
+
+@export var cardsSaved:Array[PackedScene]
+@export var defultCards:Array[String]
+func storCard():
+	cardsSaved=[]
+	if cardDeck.get_children().size()>0:
+		for c in cardDeck.get_children():
+			var p = PackedScene.new()
+			var r = p.pack(c)
+			print("保存了名为"+c.cardName+"的卡片","保存结果为",r)
+			cardsSaved.append(p)
+	var saver = deckSavedCards.new()
+	saver.cards=cardsSaved
+	var path = str(get_path())
+	var savePath = path
+	Infos.save.decks[savePath] = saver
 	
 	
 	
+
+func loadCards():
+	clear_children($ScrollContainer/cardPoiDeck)
+	clear_children($cardDcek)
+	var path = str(get_path())
+	var savePath = path
+	if Infos.save.decks.has(savePath):
+		var save = Infos.save.decks[savePath]
+		if save.cards.size()>0:
+			for c in save.cards:
+				var p = c.instantiate()
+				add_card(p)
+	else :
+		for i in defultCards:
+			Infos.nowScene.add_new_card(i,self)
 	
+	
+func clear_children(node: Node):
+	for child in node.get_children():
+		node.remove_child(child)
+		child.queue_free()

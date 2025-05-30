@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bos7sr7ar0mhi"]
+[gd_scene load_steps=4 format=3 uid="uid://bos7sr7ar0mhi"]
 
 [ext_resource type="Script" uid="uid://l3y1m1tkes8g" path="res://infos.gd" id="1_ek0vb"]
+[ext_resource type="Script" uid="uid://b6woi0d856qh6" path="res://option.gd" id="3_24ha0"]
+[ext_resource type="PackedScene" uid="uid://5aq8sw700syb" path="res://deck/handDeck.tscn" id="3_obuaq"]
 
 [node name="infos" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_ek0vb")
+
+[node name="handDeck" parent="." groups=["saveableDecks"] instance=ExtResource("3_obuaq")]
+offset_left = 355.0
+offset_top = 720.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="option" type="Button" parent="."]
+offset_left = 76.0
+offset_top = 79.0
+offset_right = 168.0
+offset_bottom = 126.0
+text = "选项"
+script = ExtResource("3_24ha0")
+
+[connection signal="button_down" from="option" to="option" method="_on_button_down"]
