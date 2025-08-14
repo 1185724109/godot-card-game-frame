@@ -19,7 +19,7 @@ var num = 1
 
 
 
-enum cardState{following,dragging,vfs,fake}
+enum cardState{following,dragging,vfs,fake,hanging}
 @export var cardCurrentState=cardState.following
 
 @export var follow_target:Node
@@ -84,11 +84,15 @@ func _on_button_button_down() -> void:
 		
 		pass # Replace with function body.
 
-
+var del
 func _on_button_button_up() -> void:
 	if dup!=null:
 		dup.queue_free()
-	
+	if del:
+		#follow_target.queue_free()
+		self.queue_free()
+		print("deleted")
+		return
 	if whichDeckMouseIn!=null:
 		whichDeckMouseIn.add_card(self)
 	else:

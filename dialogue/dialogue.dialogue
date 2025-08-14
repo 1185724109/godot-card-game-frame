@@ -1,0 +1,11 @@
+~ cat
+Nathan: Oi, oi,兄弟，来点猫嘛
+Nathan: 你想带回家一只宇宙特制的猫咪吗？
+- 听起来不错，但我是个新手飞船驾驶员，不知道能不能顺便带几只回来
+	Nathan: 试试吧，绝对带劲
+	do NpcManager.npc_give_card("Gold_ore",5)
+- 算了吧
+	Nathan: 没意思
+Nathan: 下次见
+do NpcManager.esc_dialouge()
+=> END

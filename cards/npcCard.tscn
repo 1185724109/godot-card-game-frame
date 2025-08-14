@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvuob5kctema7"]
+
+[ext_resource type="Script" uid="uid://dretg5umsqah6" path="res://cards/npc_card.gd" id="1_cqvph"]
+[ext_resource type="Texture2D" uid="uid://bdpteya7dtpmh" path="res://assets/ComfyUI_00027_.png" id="1_lx3t2"]
+[ext_resource type="Texture2D" uid="uid://behvp6ge6bwbq" path="res://assets/npc.png" id="2_cqvph"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llgbb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3bsf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjy1j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="npcCard" type="Control" groups=["card"]]
+custom_minimum_size = Vector2(240, 340)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 240.0
+mouse_filter = 1
+script = ExtResource("1_cqvph")
+
+[node name="TextureRect" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.5
+anchor_right = 0.958
+anchor_bottom = 0.5
+offset_left = -0.0800009
+offset_top = -158.0
+offset_right = 0.0799866
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="siteImg" type="TextureRect" parent="TextureRect"]
+modulate = Color(0.8, 0.8, 0.8, 0.862745)
+clip_contents = true
+custom_minimum_size = Vector2(206, 303)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -151.5
+offset_right = -7.0
+offset_bottom = 151.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("1_lx3t2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="npcImg" type="TextureRect" parent="TextureRect"]
+layout_mode = 2
+anchor_top = 0.343457
+anchor_right = 1.0
+anchor_bottom = 0.975
+offset_left = 10.0
+offset_top = 0.124
+offset_right = -10.0
+offset_bottom = -0.0750122
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("2_cqvph")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 229.0
+offset_bottom = 328.0
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_llgbb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n3bsf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pjy1j")
+
+[node name="nameLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 21.0
+offset_right = 185.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "NPC名字"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_down"]

@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://jl7xfb4xadb1"]
+
+[ext_resource type="Script" uid="uid://d2adfiq7hryjj" path="res://deck/changeable_deck.gd" id="1_q4kps"]
+[ext_resource type="Script" uid="uid://0oc8m8181w57" path="res://deck/delete.gd" id="2_yssse"]
+
+[node name="deck" type="Panel" groups=["cardDeck", "cardDropable"]]
+offset_right = 1565.0
+offset_bottom = 360.0
+script = ExtResource("1_q4kps")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cardPoiDeck" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="cardDcek" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = -36.0
+offset_right = -3.0
+offset_bottom = 359.0
+value = 17.05
+fill_mode = 3
+
+[node name="weight" type="Label" parent="."]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 4.0
+offset_right = -56.0
+offset_bottom = 27.0
+text = "0/100"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1465.0
+offset_right = 1562.0
+offset_bottom = 353.0
+
+[node name="getAll" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 15.0
+offset_right = 84.0
+offset_bottom = 85.0
+text = "全拿"
+
+[node name="compressed" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(70, 70)
+offset_left = 14.0
+offset_top = 129.0
+offset_right = 84.0
+offset_bottom = 199.0
+toggle_mode = true
+text = "紧凑"
+
+[node name="delete" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(70, 70)
+offset_left = 15.0
+offset_top = 263.0
+offset_right = 85.0
+offset_bottom = 333.0
+text = "删除"
+script = ExtResource("2_yssse")
+
+[connection signal="child_entered_tree" from="ScrollContainer/cardPoiDeck" to="." method="_on_card_poi_deck_child_entered_tree"]
+[connection signal="button_down" from="Panel/getAll" to="." method="_on_get_all_button_down"]
+[connection signal="button_up" from="Panel/getAll" to="." method="_on_get_all_button_up"]
+[connection signal="toggled" from="Panel/compressed" to="." method="_on_compressed_toggled"]
+[connection signal="mouse_entered" from="Panel/delete" to="." method="_on_delete_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/delete" to="." method="_on_delete_mouse_exited"]

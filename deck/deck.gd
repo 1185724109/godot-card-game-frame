@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 func sort_nodes_by_position(children):
 	children.sort_custom(sort_by_position)
 	for i in range(children.size()):
-		if children[i].cardCurrentState:
+		if children[i].cardCurrentState!=children[i].cardState.hanging:
 			children[i].z_index = i
 			cardDeck.move_child(children[i],i)
 

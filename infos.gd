@@ -15,8 +15,12 @@ func add_new_card(cardName,cardDeck,caller = get_tree().get_first_node_in_group(
 		var cardClass=CardInfos.infosDic[cardName]["base_cardClass"]
 		print("添加的卡的类型为%s:"%cardClass)
 		var cardToAdd
-		
-		cardToAdd=preload("res://cards/card.tscn").instantiate() as card
+		if cardClass=="site":
+			cardToAdd=preload("res://cards/siteCard.tscn").instantiate() as siteCard
+		elif cardClass=="npc":
+			cardToAdd=preload("res://cards/npcCard.tscn").instantiate() as npcCard
+		else:
+			cardToAdd=preload("res://cards/card.tscn").instantiate() as card
 		
 		cardToAdd.initCard(cardName)
 		

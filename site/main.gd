@@ -31,7 +31,7 @@ func get_some_card():
 				break
 
 	for c in selected_cards:
-		var randomDeck = get_tree().get_nodes_in_group("cardDeck")[randi_range(0,1)]
+		var randomDeck = get_tree().get_nodes_in_group("cardDeck")[randi_range(0,2)]
 		await get_tree().create_timer(0.1).timeout
 		Infos.add_new_card(c,randomDeck,$Button)
 	
