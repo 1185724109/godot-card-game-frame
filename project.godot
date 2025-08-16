@@ -42,6 +42,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 cardDropable=""
 cardDeck=""
 saveableDecks=""
+midDeck=""
 
 [internationalization]
 

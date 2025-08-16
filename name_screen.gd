@@ -10,6 +10,7 @@ func playerInit(newPlayer:player):
 	newPlayer.playerName=nameBox.text
 	newPlayer.location="res://site/site1.tscn"
 	newPlayer.handMax = 100
+	newPlayer.money = 100
 	var folderPath = "user://save/"
 	var savePath = folderPath+"autoSave.tres"
 	create_folder(folderPath)

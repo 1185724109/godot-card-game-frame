@@ -17,6 +17,8 @@ func add_new_card(cardName,cardDeck,caller = get_tree().get_first_node_in_group(
 		var cardToAdd
 		if cardClass=="site":
 			cardToAdd=preload("res://cards/siteCard.tscn").instantiate() as siteCard
+		elif cardClass=="shop":
+			cardToAdd=preload("res://cards/shopCard.tscn").instantiate() as shopCard
 		elif cardClass=="npc":
 			cardToAdd=preload("res://cards/npcCard.tscn").instantiate() as npcCard
 		else:
@@ -37,7 +39,10 @@ func loadPlayerInfo(savePath:String="autoSave"):
 	get_tree().change_scene_to_file(save.location)
 	hand_deck.loadCards()
 	visible = true
-
+	playerUpdate()
+func playerUpdate():
+	$moneyLabel.text = "$"+str(save.money)
+	
 func savePlayerInfo(newSavePath:String):
 	for d in get_tree().get_nodes_in_group("saveableDecks"):
 		d.storCard()

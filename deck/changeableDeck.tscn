@@ -62,6 +62,7 @@ text = "全拿"
 
 [node name="compressed" type="Button" parent="Panel"]
 custom_minimum_size = Vector2(70, 70)
+layout_mode = 0
 offset_left = 14.0
 offset_top = 129.0
 offset_right = 84.0
@@ -71,6 +72,7 @@ text = "紧凑"
 
 [node name="delete" type="Button" parent="Panel"]
 custom_minimum_size = Vector2(70, 70)
+layout_mode = 0
 offset_left = 15.0
 offset_top = 263.0
 offset_right = 85.0

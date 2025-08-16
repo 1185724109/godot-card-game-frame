@@ -5,18 +5,16 @@
 [ext_resource type="Script" uid="uid://d16ghrtodt5g4" path="res://site/go_to_button.gd" id="3_2vui8"]
 [ext_resource type="PackedScene" uid="uid://jl7xfb4xadb1" path="res://deck/changeableDeck.tscn" id="4_34a6l"]
 
-[node name="site1" type="Node2D" node_paths=PackedStringArray("scene_1", "scene_2")]
+[node name="site1" type="Node2D" node_paths=PackedStringArray("scene_1")]
 script = ExtResource("1_6j1h7")
 scene_1 = NodePath("deck")
-scene_2 = NodePath("")
 maxRandomItemNum = 1
 minRandomItemNum = 4
 siteItems = {
-"Gold_ore": 100,
-"Ice": 100,
 "Silicon_ore": 100,
-"npc_1": 300,
-"site2": 200
+"npc_1": 100,
+"shop1": 300,
+"site2": 100
 }
 
 [node name="Control" type="Control" parent="."]
@@ -28,6 +26,12 @@ offset_bottom = 40.0
 [node name="deck" parent="." instance=ExtResource("2_2vui8")]
 offset_left = 355.0
 offset_right = 1920.0
+
+[node name="deck2" parent="." groups=["midDeck"] instance=ExtResource("4_34a6l")]
+offset_left = 355.0
+offset_top = 360.0
+offset_right = 1920.0
+offset_bottom = 720.0
 
 [node name="Button" type="Button" parent="."]
 offset_left = 80.0
@@ -52,12 +56,6 @@ offset_top = -30.0
 offset_right = 161.0
 offset_bottom = -7.0
 text = "site1"
-
-[node name="deck2" parent="." instance=ExtResource("4_34a6l")]
-offset_left = 355.0
-offset_top = 360.0
-offset_right = 1920.0
-offset_bottom = 720.0
 
 [connection signal="button_down" from="Button" to="." method="get_some_card"]
 [connection signal="button_down" from="goToButton" to="goToButton" method="_on_button_down"]

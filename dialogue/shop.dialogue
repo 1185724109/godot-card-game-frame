@@ -5,12 +5,12 @@
 商店老板: 我这儿不收垃圾，朋友
 => END
 ~ lackOfMoney
-if customCounter >= 10
+if NpcManager.customCounter >= 10
 	商店老板: [next=0.5][shake rate=20.0 level=5 connected=1]不 买 别 摸!!![/shake]
-	do clearCounter()
-	do esc_dialouge()
-	do leave()
-elif customCounter >= 5
+	do NpcManager.clearCounter()
+	do NpcManager.esc_dialouge()
+	do NpcManager.leave()
+elif NpcManager.customCounter >= 5
 	商店老板: [speed=0.3]不 买 别 摸，朋 友
 else
 	商店老板: 不买别摸，朋友

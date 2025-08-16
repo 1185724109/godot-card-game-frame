@@ -1,0 +1,155 @@
+[gd_scene load_steps=10 format=3 uid="uid://x13ja1jhtex5"]
+
+[ext_resource type="Script" uid="uid://ct8kkf2pmsni" path="res://cards/shop_card.gd" id="1_lgsyb"]
+[ext_resource type="Texture2D" uid="uid://bdpteya7dtpmh" path="res://assets/ComfyUI_00027_.png" id="2_lgsyb"]
+[ext_resource type="Texture2D" uid="uid://behvp6ge6bwbq" path="res://assets/npc.png" id="3_oybcv"]
+[ext_resource type="PackedScene" uid="uid://c8yprw58ms1a1" path="res://deck/shopCardDeck.tscn" id="6_i7w2x"]
+[ext_resource type="Script" uid="uid://cudckam7n2t8o" path="res://cards/get_in_button.gd" id="6_ruxlj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llgbb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3bsf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjy1j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sh2x"]
+bg_color = Color(0.13, 0.13, 0.13, 0.764706)
+
+[node name="shopCard" type="Control" groups=["card"]]
+custom_minimum_size = Vector2(240, 340)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 240.0
+mouse_filter = 1
+script = ExtResource("1_lgsyb")
+
+[node name="TextureRect" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.5
+anchor_right = 0.958
+anchor_bottom = 0.5
+offset_left = -0.0800009
+offset_top = -158.0
+offset_right = 0.0799866
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="siteImg" type="TextureRect" parent="TextureRect"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+clip_contents = true
+custom_minimum_size = Vector2(206, 303)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.99999
+offset_top = 7.0
+offset_right = -6.99998
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("2_lgsyb")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="npcImg" type="TextureRect" parent="TextureRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchor_top = 0.343457
+anchor_right = 1.0
+anchor_bottom = 0.975
+offset_left = 10.0
+offset_top = 0.124
+offset_right = -10.0
+offset_bottom = -0.0750122
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("3_oybcv")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 229.0
+offset_bottom = 328.0
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_llgbb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n3bsf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pjy1j")
+script = ExtResource("6_ruxlj")
+
+[node name="Panel" type="Panel" parent="Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_0sh2x")
+
+[node name="Label" type="Label" parent="Button/Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 193.0
+offset_bottom = 259.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "关于这个地方的介绍"
+autowrap_mode = 1
+
+[node name="shopCardDeck" parent="." instance=ExtResource("6_i7w2x")]
+unique_name_in_owner = true
+visible = false
+clip_contents = true
+layout_mode = 1
+offset_top = 362.0
+offset_right = 1325.0
+offset_bottom = 23.0
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 28.0
+offset_right = 72.0
+offset_bottom = 76.0
+icon_alignment = 1
+
+[node name="nameLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 84.0
+offset_top = 33.0
+offset_right = 210.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "商店名字"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_down"]
+[connection signal="mouse_entered" from="Button" to="Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="Button" method="_on_mouse_exited"]
+[connection signal="button_down" from="Button2" to="." method="_on_esc"]

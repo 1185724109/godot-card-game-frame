@@ -26,7 +26,7 @@ offset_bottom = 40.0
 offset_left = 355.0
 offset_right = 1920.0
 
-[node name="deck2" parent="." groups=["saveableDecks"] instance=ExtResource("2_gxtlt")]
+[node name="deck2" parent="." groups=["midDeck", "saveableDecks"] instance=ExtResource("2_gxtlt")]
 offset_left = 355.0
 offset_top = 360.0
 offset_right = 1920.0

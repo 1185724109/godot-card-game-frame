@@ -12,7 +12,7 @@ var preDeck
 @export var maxStackNum:int
 @export var cardWeight:float
 @export var cardInfo:Dictionary
-
+@export var price:int
 @export var pickButton:Button
 var dup
 var num = 1
@@ -112,6 +112,7 @@ func initCard(Nm) -> void:
 	cardName=cardInfo["base_cardName"]
 	maxStackNum=int(cardInfo["base_maxStack"])
 	cardCurrentState=cardState.following
+	price = int(cardInfo["base_price"])
 	drawCard()
 
 

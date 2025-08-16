@@ -22,4 +22,10 @@ offset_bottom = 126.0
 text = "选项"
 script = ExtResource("3_24ha0")
 
+[node name="moneyLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 40
+text = "10000"
+
 [connection signal="button_down" from="option" to="option" method="_on_button_down"]

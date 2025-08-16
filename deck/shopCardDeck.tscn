@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8yprw58ms1a1"]
+
+[ext_resource type="Script" uid="uid://bnt5gprtvwnhe" path="res://deck/shop_card_deck.gd" id="1_5dyur"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dyur"]
+
+[node name="shopCardDeck" type="Panel" groups=["cardDropable"]]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -356.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5dyur")
+script = ExtResource("1_5dyur")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cardPoiDeck" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="cardDcek" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 359.0
+fill_mode = 3
+
+[node name="weight" type="Label" parent="."]
+layout_mode = 0
+offset_left = -84.0
+offset_top = 3.0
+offset_right = -44.0
+offset_bottom = 26.0

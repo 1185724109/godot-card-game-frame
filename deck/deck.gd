@@ -9,7 +9,6 @@ var currentWeight = 0
 @export var maxWeight = 100
 
 
-
 func _ready() -> void:
 	if is_in_group("saveableDecks"):
 		loadCards()
